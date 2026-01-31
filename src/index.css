@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800;900&family=Nunito:wght@400;500;600;700;800&display=swap');
+
+@font-face {
+  font-family: 'Chubby';
+  src: url('/fonts/CHUBBY.TTF') format('truetype');
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* New vibrant palette inspired by reference */
+    --background: 0 0% 100%;
+    --foreground: 220 20% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 20%;
+
+    /* Vibrant Orange - main accent */
+    --primary: 24 95% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Light cream background */
+    --secondary: 35 60% 96%;
+    --secondary-foreground: 220 20% 20%;
+
+    --muted: 220 10% 94%;
+    --muted-foreground: 220 10% 45%;
+
+    /* Green CTA */
+    --accent: 142 70% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 24 95% 53%;
+
+    --radius: 0.75rem;
+
+    /* Custom colors for sections */
+    --orange-primary: 24 95% 53%;
+    --orange-light: 24 100% 95%;
+    --green-cta: 142 70% 45%;
+    --green-check: 160 84% 39%;
+    --blue-price: 217 91% 50%;
+    --red-price: 0 84% 50%;
+    --yellow-categories: 45 100% 94%;
+    --cream-bg: 35 60% 97%;
+    --pink-benefit: 330 80% 60%;
+    --yellow-benefit: 45 93% 58%;
+    --blue-benefit: 217 91% 60%;
+    --red-benefit: 0 84% 60%;
+    
+    /* Section backgrounds */
+    --hero-bg: 0 0% 100%;
+    --feature-bg: 0 0% 98%;
+    --bonus-bg: 0 0% 100%;
+    --basic-bg: 0 0% 100%;
+    --guarantee-bg: 0 0% 100%;
+    --faq-bg: 220 15% 97%;
+    --social-proof-bg: 0 0% 100%;
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(220 20% 20% / 0.08);
+    --shadow-card: 0 8px 30px -8px hsl(220 20% 20% / 0.15);
+    --shadow-cta: 0 8px 25px -6px hsl(142 70% 35% / 0.4);
+    --shadow-premium: 0 12px 40px -10px hsl(24 95% 45% / 0.25);
+  }
+
+  .dark {
+    --background: 220 20% 10%;
+    --foreground: 0 0% 95%;
+    --card: 220 20% 12%;
+    --card-foreground: 0 0% 95%;
+    --popover: 220 20% 12%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 24 95% 55%;
+    --primary-foreground: 220 20% 10%;
+    --secondary: 220 15% 18%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 220 15% 18%;
+    --muted-foreground: 220 10% 65%;
+    --accent: 142 70% 50%;
+    --accent-foreground: 0 0% 100%;
+    --border: 220 15% 22%;
+    --input: 220 15% 22%;
+    --ring: 24 95% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Baloo 2', cursive !important;
+    font-weight: 800;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.875rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  @media (min-width: 640px) {
+    h1 {
+      font-size: 2.25rem;
+    }
+    h2 {
+      font-size: 1.875rem;
+    }
+    h3 {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    h1 {
+      font-size: 3rem;
+    }
+    h2 {
+      font-size: 2.25rem;
+    }
+    h3 {
+      font-size: 1.875rem;
+    }
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gradient-hero {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--orange-light)) 0%,
+      hsl(var(--background)) 100%
+    );
+  }
+
+  .gradient-premium {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--green-cta)) 0%,
+      hsl(142 70% 40%) 100%
+    );
+  }
+
+  .gradient-orange {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--orange-primary)) 0%,
+      hsl(24 95% 45%) 100%
+    );
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-cta {
+    box-shadow: var(--shadow-cta);
+  }
+
+  .shadow-premium {
+    box-shadow: var(--shadow-premium);
+  }
+
+  .bg-orange-light {
+    background-color: hsl(var(--orange-light));
+  }
+
+  .bg-yellow-categories {
+    background-color: hsl(var(--yellow-categories));
+  }
+
+  .bg-cream {
+    background-color: hsl(var(--cream-bg));
+  }
+
+  .text-orange-primary {
+    color: hsl(var(--orange-primary));
+  }
+
+  .text-green-cta {
+    color: hsl(var(--green-cta));
+  }
+
+  .text-green-check {
+    color: hsl(var(--green-check));
+  }
+
+  .text-blue-price {
+    color: hsl(var(--blue-price));
+  }
+
+  .text-red-price {
+    color: hsl(var(--red-price));
+  }
+
+  .bg-green-check {
+    background-color: hsl(var(--green-check));
+  }
+
+  .bg-pink-benefit {
+    background-color: hsl(var(--pink-benefit));
+  }
+
+  .bg-yellow-benefit {
+    background-color: hsl(var(--yellow-benefit));
+  }
+
+  .bg-blue-benefit {
+    background-color: hsl(var(--blue-benefit));
+  }
+
+  .bg-red-benefit {
+    background-color: hsl(var(--red-benefit));
+  }
+
+  .border-dashed-orange {
+    border: 3px dashed hsl(var(--orange-primary));
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-12 sm:py-16 lg:py-20;
+  }
+
+  .orange-header-bar {
+    @apply w-full h-2 gradient-orange;
+  }
+
+  .checkmark-circle {
+    @apply w-6 h-6 bg-green-check rounded-full flex items-center justify-center flex-shrink-0;
+  }
+
+  .badge-orange {
+    @apply inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-full font-bold text-sm;
+  }
+
+  .trust-badge {
+    @apply flex items-center gap-2 text-xs text-muted-foreground;
+  }
+}
